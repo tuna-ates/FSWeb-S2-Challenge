@@ -175,13 +175,13 @@ console.log(bircumle);
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
  */
 //3a çözümü
+     
       meyveler.pop();
-      sebzeler.pop();
-      meyveler.shift();
-      sebzeler.shift();
+       meyveler.shift();
+    
       //console.log(`meyveler:${meyveler}--- sebzeler:${sebzeler}`);
 
-/* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan =>  , Kirpi=> 🦔 , 
+/* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan =>🐇  , Kirpi=> 🦔 , 
 Tavşanla kirpi sebzeleri ele geçirmek için bir plan kurdular. Tavşan diziye önden saldıracak, kirpi ise 
 arkalarından dolaşacak. Varsayalım ki arkadaşların planları başarılı oldu. Tavşanı dizinin ilk elemanına 🐇, 
 Kirpiyi dizinin son elemanına ekleyin 
@@ -196,7 +196,7 @@ elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine 
  */
 //3c çözümü
 var manav=[];
-manav=meyveler.concat(" ",sebzeler);
+manav=meyveler.concat(sebzeler);
 console.log(manav);
 
 
@@ -217,11 +217,23 @@ console.log(manav);
         (.toUpperCase ve .toLowerCase metotlarıı kullanabilirsiniz.)
 			4. elde edilen string döndürülecek
  */
-
-function emojileriDonustur() {
-  /* kodlar buraya */
+      // var emojiler = {
+      //   ":)": "🙂",
+      //   ":(": "😔",
+      //   ":d": "😁",
+      //   ":p": "😛",
+      //   ":o": "😱",
+      //   "<3": "❤️",
+      // };
+      
+function emojileriDonustur(atılanMesaj,emojiObject) {
+     for(let key in emojiObject){
+      atılanMesaj=atılanMesaj.replaceAll(key.toLowerCase(),emojiObject[key]);
+      atılanMesaj=atılanMesaj.replaceAll(key.toUpperCase(),emojiObject[key]);
+     }
+     return atılanMesaj;
 }
-
+  console.log(emojileriDonustur("bu bir denemedir :)",emojiler));
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
   console.log("Kodlar çalışıyor");
